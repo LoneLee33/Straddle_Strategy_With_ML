@@ -3,10 +3,13 @@
 This repository uses machine‑learning approaches on time trades of ATM equity/ETF straddles. Instead of trading on a daily basis, the pipeline forms trades from characteristics of volatility, momentum, and liquidity and only trades when forecasted edge is high enough relative to calibrated values. The pipeline includes walk‑forward training with roll‑ing, validation‑time threshold calibration, and a backtest that converts scores to trades.
 
 ## Overview
-Daily option quotes and underlying prices are combined into **ATM straddles** within a target DTE window (usually ~30 days). We engineer training features, use **month-by-month walk-forward** splits to train models, and **calibrate the entry threshold** on each validation month to maximize **per-trade Sharpe**. The resulting rules are then applied to the **next held-out month** to produce **out-of-sample** trades and P&L.
+Daily option prices and underlying levels are constructed into **ATM straddles** within the target **DTE** range (usually ~30 days). **Trailing characteristics** are designed; **month-by-month walk-forward** splits are used to train the models; and the **entry threshold** is calibrated on each month used as the **validation** month with the goal of maximizing **per-trade Sharpe**. The final rules are then implemented in the next **held-out month** in order to create **out-of-sample** trades and P&L.
 
-- **`Straddle_With_ML.ipynb`** — Regression pipeline with walk-forward training and threshold tuning.  
-- **`Test on 23.ipynb`** — Most recent notebook; runs two trainings (details inside) and includes the latest trade simulator and reporting.
+Two notebooks document the pipeline end-to-end:
+**`Straddle_With_ML.ipynb`** — **regression pipeline** with **walk-forward training** and **threshold tuning**.
+**`Test on 23.ipynb`** — **most recent notebook**. **Both of the trainings** in it (see details below) and the most recent **trade simulator** and **reporting**.
+
+**Backtest in 2023 result:** **Long straddle portfolio return** was up by **12%**, **short straddle portfolio return** was up by **3%**, and **portfolio combination portfolio return** was up by **7%**.
 
 ## 2023 Backtest (Summary)
 
