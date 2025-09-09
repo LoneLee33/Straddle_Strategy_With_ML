@@ -11,12 +11,6 @@ Two notebooks document the pipeline end-to-end:
 
 **Backtest in 2023 result:** **Long straddle portfolio return** was up by **12%**, **short straddle portfolio return** was up by **3%**, and **portfolio combination portfolio return** was up by **7%**.
 
-## 2023 Backtest (Summary)
-
-- **Long straddle**: **+12%**
-- **Short straddle**: **+3%**
-- **Combined portfolio**: **+7%**
-
 ## Repository layout
 ```
 Data/        # raw or prepared CSV/Parquet (not tracked)
