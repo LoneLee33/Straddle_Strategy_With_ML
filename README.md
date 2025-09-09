@@ -9,6 +9,8 @@ Two notebooks demonstrate the pipeline end‑to‑end:
 - **`Straddle_With_ML.ipynb`** — regression pipeline with walk‑forward training and threshold tuning.  
 - **`Test on 23.ipynb`** — the most up‑to‑date notebook. It runs **two trainings** (details below) and contains the current trade simulator and reporting.
 
+2023 backtest (summary): Long straddle +12%, short straddle +3%, combined portfolio +7%.
+
 > Paths inside notebooks may be local; switch them to relative paths such as `Data/...` when running in a fresh environment.
 
 ## Repository layout
