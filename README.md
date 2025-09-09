@@ -1,6 +1,6 @@
 # Straddle Strategy with Machine Learning
 
-This repository implements machine‑learning methods to **time entries** for ATM equity/ETF **straddles**. Rather than trading every day, the pipeline generates signals from volatility, momentum, and liquidity features and enters only when forecasted edge exceeds calibrated thresholds. The workflow includes **rolling walk‑forward training**, **validation‑time threshold calibration**, and a **backtest** that converts scores into trades.
+This repository uses machine‑learning approaches on time trades of ATM equity/ETF straddles. Instead of trading on a daily basis, the pipeline forms trades from characteristics of volatility, momentum, and liquidity and only trades when forecasted edge is high enough relative to calibrated values. The pipeline includes walk‑forward training with roll‑ing, validation‑time threshold calibration, and a backtest that converts scores to trades.
 
 ## Overview
 Daily option quotes and underlying prices are assembled into **ATM straddles** within a target DTE window (typically ~30 days). Trailing features are engineered; models are trained with **month‑by‑month walk‑forward** splits; and entry thresholds are tuned on each validation month to maximize per‑trade Sharpe. The resulting rules are then applied to the next held‑out month to generate out‑of‑sample trades and P&L.
